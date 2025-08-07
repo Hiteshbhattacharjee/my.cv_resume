@@ -1,42 +1,93 @@
 // Data for the portfolio sections
 const portfolioData = {
     hero: {
-        name: "John Doe",
-        title: "Software Engineer | Web Developer",
+        name: "Hitesh Bhattacharjee",
+        title: "Blockchain Enthusiast | Full Stack Developer | Tech Leader",
+        tagline: "Empowering communities through code, creativity, and leadership.",
         profileImg: "https://placehold.co/160x160/1a202c/e2e8f0?text=Profile",
         social: {
-            github: "https://github.com",
-            linkedin: "https://linkedin.com",
-            email: "mailto:johndoe@example.com"
+            github: "https://github.com/hitesh-bhattacharjee",
+            linkedin: "https://linkedin.com/in/hitesh-bhattacharjee",
+            email: "mailto:hiteshbhattacharjee###@gmail.com"
         }
     },
     about: {
-        content: "Hi, I'm John Doe, a passionate software engineer with a knack for building beautiful and functional web applications. With a strong background in front-end and back-end technologies, I enjoy solving complex problems and creating intuitive user experiences. My journey started with a fascination for how things work, and it's led me to a career where I can turn ideas into reality."
+        content: "I’m a driven and versatile Computer Science student with a specialization in Blockchain, currently in my third year. With a strong foundation in Web Development, DSA (C++/Java), and a growing interest in AI/ML, I have hands-on experience in leading tech and management teams, developing full-stack applications, and organizing large-scale campus events. I have worked as a Diamond Intern at CollegeTips and am serving as the General Secretary of the PDTC club at my college. Passionate about innovation, I’m building real-world solutions like Swarozgar (a blockchain-based freelancing app) and preparing for GSoC 2026 . I thrive in high-responsibility environments and aim to contribute meaningfully to technology and national service."
     },
     projects: [
         {
-            title: "E-commerce Platform",
-            description: "A full-stack e-commerce application with user authentication, product management, and a secure checkout process.",
+            title: "Swarozgar",
+            description: "A blockchain-based freelancing platform.",
+            technologies: ["Solidity", "React", "Web3.js", "Node.js"],
             link: "#",
             github: "#"
         },
         {
-            title: "Real-time Chat App",
-            description: "A real-time messaging application built with WebSockets, allowing users to communicate instantly in chat rooms.",
+            title: "HiredNext",
+            description: "A smart career accelerator platform using AI and web technologies.",
+            technologies: ["React", "Python", "Scikit-learn", "Express"],
             link: "#",
             github: "#"
         },
         {
-            title: "Personal Blog Engine",
-            description: "A custom-built blog platform with a content management system (CMS) for creating and publishing posts.",
+            title: "Scholarship DApp",
+            description: "A peer-to-peer scholarship funding decentralized application on Ethereum.",
+            technologies: ["Solidity", "Web3.js", "Ethereum"],
+            link: "#",
+            github: "#"
+        },
+        {
+            title: "Gym Crowd Tracker",
+            description: "A real-time gym occupancy monitor using IoT and Firebase.",
+            technologies: ["IoT", "Firebase", "C++"],
+            link: "#",
+            github: "#"
+        },
+        {
+            title: "Titanic Survival Predictor",
+            description: "An ML project to predict Titanic survival with tabular data.",
+            technologies: ["Python", "Scikit-learn", "Pandas", "Matplotlib"],
+            link: "#",
+            github: "#"
+        },
+        {
+            title: "[Upcoming] PDTC Club Management System",
+            description: "A platform to manage club activities, events, and members.",
+            technologies: ["MERN Stack"],
             link: "#",
             github: "#"
         },
     ],
-    skills: ["JavaScript", "React", "Node.js", "Express", "Python", "Tailwind CSS", "MongoDB", "SQL", "Git", "Figma"],
+    skills: {
+        languages: ["C++", "Java", "JavaScript", "Python", "Solidity"],
+        web: ["HTML", "CSS", "React", "Node.js", "MongoDB", "Express"],
+        blockchain: ["Solidity", "Web3.js", "Ethereum"],
+        tools: ["Git", "GitHub", "Firebase", "Postman"],
+        ai_ml: ["Scikit-learn", "Pandas", "Matplotlib (basic)"],
+        other: ["Leadership", "PR", "Team Management"]
+    },
+    achievements: [
+        "General Secretary, PDTC Club",
+        "Diamond Intern at CollegeTips",
+        "Under25 Fellowship Recipient",
+        "Interviewer for IBF Management and PR",
+        "Lead Organizer for tech & music events"
+    ],
+    goals: [
+        "Aug–Dec 2025: GSoC 2025 Contributor",
+        "Dec 2025: Secure Internship in Blockchain/Web3",
+       
+    ],
     contact: {
-        email: "johndoe@example.com",
-        linkedin: "https://linkedin.com/in/johndoe"
+        email: "hiteshbhattacharjee###@gmail.com",
+        location: "India",
+        resumeLink: "#" // Replace with your resume PDF link
+    },
+    socialLinks: {
+        github: "https://github.com/hitesh-bhattacharjee",
+        linkedin: "https://linkedin.com/in/hitesh-bhattacharjee",
+        twitter: "#",
+        leetcode: "#"
     }
 };
 
@@ -48,25 +99,6 @@ let isMobileMenuOpen = false;
 const mainContent = document.getElementById('main-content');
 const header = document.getElementById('header');
 const footer = document.getElementById('footer');
-
-// Icon helper function (uses lucide-react names)
-const getIcon = (name) => {
-    // This is a simple mock, as we are using Lucide's script for rendering
-    const iconMap = {
-        'PenTool': `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pen-tool"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><path d="M11 11 15 7"/></svg>`,
-        'User': `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`,
-        'Briefcase': `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><path d="M12 12h.01"/></svg>`,
-        'BookOpen': `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>`,
-        'Mail': `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>`,
-        'Github': `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3.5 0 4.3-2.3 4.3-5a4.8 4.8 0 0 0-1-3.5c1-1.3-.2-3.8.4-5.5a1 1 0 0 0-1-1c-2.3 0-4.3 1.2-5 3a1 1 0 0 0-1 1c-1.3 0-3.3 1.2-5 3-1.8 1.8-1.5 5.5.3 7 1.8 1.5 4.3 2 5 2a1 1 0 0 0 1 1v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1z"/></svg>`,
-        'Linkedin': `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>`,
-        'ExternalLink': `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>`,
-        'Menu': `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>`,
-        'X': `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>`
-    };
-    // The lucide script will automatically render these SVGs
-    return `<i data-lucide="${name.toLowerCase()}" class="lucide"></i>`;
-};
 
 // Toggle mobile menu
 const toggleMobileMenu = () => {
@@ -90,12 +122,24 @@ const renderHero = () => {
             </div>
             <h2 class="hero-title">${portfolioData.hero.name}</h2>
             <p class="hero-subtitle">${portfolioData.hero.title}</p>
+            <p class="text-lg text-slate-300 mb-6">${portfolioData.hero.tagline}</p>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="${portfolioData.contact.resumeLink}" target="_blank" rel="noopener noreferrer" class="py-3 px-6 bg-teal-600 text-white font-semibold rounded-full shadow-lg hover:bg-teal-700 transition-colors duration-300">
+                    <i data-lucide="download" class="inline-block mr-2" width="20" height="20"></i> Download Resume
+                </a>
+                <button class="py-3 px-6 bg-slate-700 text-slate-200 font-semibold rounded-full shadow-lg hover:bg-slate-600 transition-colors duration-300" data-page="contact">
+                    <i data-lucide="mail" class="inline-block mr-2" width="20" height="20"></i> Contact Me
+                </button>
+            </div>
             <div class="social-links">
-                <a href="${portfolioData.hero.social.github}" target="_blank" rel="noopener noreferrer" class="social-link">
+                <a href="${portfolioData.socialLinks.github}" target="_blank" rel="noopener noreferrer" class="social-link">
                     <i data-lucide="github" class="lucide lucide-github" width="28" height="28"></i>
                 </a>
-                <a href="${portfolioData.hero.social.linkedin}" target="_blank" rel="noopener noreferrer" class="social-link">
+                <a href="${portfolioData.socialLinks.linkedin}" target="_blank" rel="noopener noreferrer" class="social-link">
                     <i data-lucide="linkedin" class="lucide lucide-linkedin" width="28" height="28"></i>
+                </a>
+                <a href="${portfolioData.socialLinks.twitter}" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <i data-lucide="twitter" class="lucide lucide-twitter" width="28" height="28"></i>
                 </a>
                 <a href="${portfolioData.hero.social.email}" class="social-link">
                     <i data-lucide="mail" class="lucide lucide-mail" width="28" height="28"></i>
@@ -118,8 +162,12 @@ const renderProjects = () => {
     const projectCards = portfolioData.projects.map(project => `
         <div class="project-card">
             <h4 class="text-xl font-semibold text-teal-300 mb-2">${project.title}</h4>
-            <p class="text-slate-400 mb-4">${project.description}</p>
-            <div class="project-links">
+            <p class="text-slate-400 mb-2">${project.description}</p>
+            <div class="project-links mt-4">
+                <span class="text-sm font-semibold text-slate-300 mr-2">Tech:</span>
+                ${project.technologies.map(tech => `<span class="bg-slate-600 text-white text-xs px-2 py-1 rounded-full">${tech}</span>`).join(' ')}
+            </div>
+            <div class="project-links mt-4">
                 <a href="${project.link}" target="_blank" rel="noopener noreferrer" class="project-link">
                     <i data-lucide="external-link" class="lucide lucide-external-link" width="18" height="18"></i>
                     Live Demo
@@ -143,35 +191,80 @@ const renderProjects = () => {
 };
 
 const renderSkills = () => {
-    const skillBadges = portfolioData.skills.map(skill => `
-        <span class="skill-badge">
-            ${skill}
-        </span>
+    const skillCategories = Object.entries(portfolioData.skills).map(([category, skills]) => `
+        <div class="skill-category">
+            <h5 class="capitalize">${category.replace('_', ' ')}</h5>
+            <div class="skill-list">
+                ${skills.map(skill => `<span class="skill-badge">${skill}</span>`).join('')}
+            </div>
+        </div>
     `).join('');
 
     return `
         <section id="skills" class="section">
-            <h3 class="section-title">Skills</h3>
-            <div class="skills-container">
-                ${skillBadges}
+            <h3 class="section-title">Skills / Tech Stack</h3>
+            <div class="skills-grid">
+                ${skillCategories}
             </div>
         </section>
     `;
 };
 
+const renderAchievements = () => {
+    const achievementList = portfolioData.achievements.map(item => `<li>${item}</li>`).join('');
+    return `
+        <section id="achievements" class="section">
+            <h3 class="section-title">Achievements / Positions</h3>
+            <ul class="list-container">
+                ${achievementList}
+            </ul>
+        </section>
+    `;
+};
+
+const renderGoals = () => {
+    const goalList = portfolioData.goals.map(item => `<li>${item}</li>`).join('');
+    return `
+        <section id="goals" class="section">
+            <h3 class="section-title">Goals / Timeline</h3>
+            <ul class="list-container">
+                ${goalList}
+            </ul>
+        </section>
+    `;
+};
+
 const renderContact = () => {
+    const socialLinks = Object.entries(portfolioData.socialLinks).map(([name, url]) => {
+        const iconName = name.replace('leetcode', 'code').replace('twitter', 'x');
+        return `
+            <a href="${url}" target="_blank" rel="noopener noreferrer" class="contact-link">
+                <i data-lucide="${iconName}" class="lucide lucide-${iconName}"></i>
+                <span class="capitalize">${name}</span>
+            </a>
+        `;
+    }).join('');
+
     return `
         <section id="contact" class="section">
             <h3 class="section-title">Contact Me</h3>
             <div class="contact-links">
                 <a href="mailto:${portfolioData.contact.email}" class="contact-link">
-                    <i data-lucide="mail" class="lucide lucide-mail" width="24" height="24"></i>
+                    <i data-lucide="mail" class="lucide lucide-mail"></i>
                     ${portfolioData.contact.email}
                 </a>
-                <a href="${portfolioData.contact.linkedin}" target="_blank" rel="noopener noreferrer" class="contact-link">
-                    <i data-lucide="linkedin" class="lucide lucide-linkedin" width="24" height="24"></i>
-                    /in/johndoe
+                <a href="${portfolioData.contact.resumeLink}" class="contact-link">
+                    <i data-lucide="file-text" class="lucide lucide-file-text"></i>
+                    Download Resume
                 </a>
+                <span class="contact-link">
+                    <i data-lucide="map-pin" class="lucide lucide-map-pin"></i>
+                    ${portfolioData.contact.location}
+                </span>
+            </div>
+            <h4 class="text-2xl font-bold text-teal-400 mt-8 mb-4">Social Links</h4>
+            <div class="flex flex-wrap justify-center gap-4">
+                ${socialLinks}
             </div>
         </section>
     `;
@@ -193,6 +286,12 @@ const renderPage = () => {
         case 'skills':
             contentHtml = renderSkills();
             break;
+        case 'achievements':
+            contentHtml = renderAchievements();
+            break;
+        case 'goals':
+            contentHtml = renderGoals();
+            break;
         case 'contact':
             contentHtml = renderContact();
             break;
@@ -209,12 +308,14 @@ const renderStaticElements = () => {
     header.innerHTML = `
         <nav class="container">
             <h1 class="text-2xl font-bold text-teal-400">
-                <a href="#" class="nav-link-btn" data-page="home">My Portfolio</a>
+                <a href="#" class="nav-link-btn" data-page="home">Hitesh Bhattacharjee</a>
             </h1>
             <div class="nav-links">
                 <button class="nav-link-btn" data-page="about">About</button>
                 <button class="nav-link-btn" data-page="projects">Projects</button>
                 <button class="nav-link-btn" data-page="skills">Skills</button>
+                <button class="nav-link-btn" data-page="achievements">Achievements</button>
+                <button class="nav-link-btn" data-page="goals">Goals</button>
                 <button class="nav-link-btn" data-page="contact">Contact</button>
             </div>
             <button id="mobile-menu-btn" class="menu-btn">
@@ -244,6 +345,14 @@ const renderStaticElements = () => {
                     <i data-lucide="book-open" class="lucide lucide-book-open"></i>
                     <span>Skills</span>
                 </button>
+                <button class="mobile-nav-btn" data-page="achievements">
+                    <i data-lucide="trophy" class="lucide lucide-trophy"></i>
+                    <span>Achievements</span>
+                </button>
+                <button class="mobile-nav-btn" data-page="goals">
+                    <i data-lucide="target" class="lucide lucide-target"></i>
+                    <span>Goals</span>
+                </button>
                 <button class="mobile-nav-btn" data-page="contact">
                     <i data-lucide="mail" class="lucide lucide-mail"></i>
                     <span>Contact</span>
@@ -254,7 +363,7 @@ const renderStaticElements = () => {
 
     footer.innerHTML = `
         <div class="container">
-            <p>&copy; ${new Date().getFullYear()} John Doe. All rights reserved.</p>
+            <p>&copy; ${new Date().getFullYear()} Hitesh Bhattacharjee. All rights reserved.</p>
         </div>
     `;
 
