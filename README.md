@@ -71,6 +71,3 @@ All of the website's content can be customized by editing the `portfolioData` ob
 
 ---
 
-## 📄 Credits
-
-This project was developed with the help of Gemini, an AI from Google. The design is a custom implementation based on modern web development practices and styling inspired by Tailwind CSS.
